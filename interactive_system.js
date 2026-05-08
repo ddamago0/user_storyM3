@@ -1,38 +1,52 @@
 // ==========================================
 // Interactive Message System
 // This program asks for the user's name
-// and age, validates the information,
-// and shows a custom message.
+// and age and shows a message.
 // ==========================================
 
 
-// Ask the user for their name
+// Ask for the user's name
 const userName = prompt("Enter your name:");
 
 
-// Ask the user for their age
-const userAge = prompt("Enter your age:");
+// Validate the name
+if (userName === "" || userName === null) {
 
-
-// Convert the age to a number
-const ageNumber = Number(userAge);
-
-
-// Validate if age is a valid number
-if (isNaN(ageNumber)) {
-
-    console.error("Error: Please enter a valid age in numbers.");
+    console.error("Error: Name is required.");
 
 } else {
 
-    // Check if the user is under 18
-    if (ageNumber < 18) {
+    // Ask for the user's age
+    const userAge = prompt("Enter your age:");
 
-        alert(`${userName}, you are a minor. Keep learning and enjoying coding!`);
+    // Convert age to number
+    const ageNumber = Number(userAge);
+
+    // Validate the age
+    if (userAge === "" || userAge === null) {
+
+        console.error("Error: Age is required.");
+
+    } else if (isNaN(ageNumber)) {
+
+        console.error("Error: Enter a valid number.");
+
+    } else if (ageNumber < 0) {
+
+        console.error("Error: Age cannot be negative.");
 
     } else {
 
-        alert(`${userName}, you are an adult. Get ready for great opportunities in programming!`);
+        // Check the age
+        if (ageNumber < 18) {
+
+            alert(`${userName}, you are a minor. Keep learning coding!`);
+
+        } else {
+
+            alert(`${userName}, you are an adult. Great future in programming!`);
+
+        }
 
     }
 
