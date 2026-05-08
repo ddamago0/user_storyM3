@@ -5,6 +5,7 @@
 This project is a simple interactive system made with JavaScript.
 
 The program asks the user for:
+
 - name
 - age
 
@@ -15,6 +16,7 @@ If the user is under 18, the program shows a message for minors.
 If the user is 18 or older, the program shows a message for adults.
 
 The program also validates:
+
 - empty name
 - empty age
 - invalid numbers
@@ -59,5 +61,3 @@ README.md
 - while
 - Number()
 - isNaN()
-
----
